@@ -17,8 +17,6 @@ public class ServiciosService {
 
 	public List<Servicio> findByName(String name) {
 		List<Servicio> dbServicios = servicioRepository.findByName(name);
-
-		return dbServicios;
 		if (name != null) {
 			System.out.println(name);
 			List<Servicio> dbServicio = servicioRepository.findByName(name);

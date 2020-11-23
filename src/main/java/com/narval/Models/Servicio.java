@@ -39,7 +39,7 @@ public class Servicio {
 	@Column(name = "descripcion", length = 500, nullable = false, unique = false)
 	private String descripcion;
 
-	@Column(name = "fechaInicio", nullable = true, unique = false)
+	@Column(name = "fechainicio", nullable = true, unique = false)
 	private Date fechaInicio;
 
 	@Column(name = "fechafinal", nullable = true)

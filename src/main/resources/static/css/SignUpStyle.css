@@ -9,7 +9,6 @@ body{
     font-family: 'Poppins', sans-serif;
     overflow: auto;
     background-color: #BF0D3E;
-
     
 }
 
@@ -59,7 +58,7 @@ form{
 
 .login-content h2{
 	margin: 15px 0;
-	color: white;
+	color: #333;
 	text-transform: uppercase;
 	font-size: 2.9rem;
 }
@@ -191,7 +190,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #BF0D3E, #e74e70, #32be8f);
+	background-image: linear-gradient(to right, #BF0D3E, #9c163c, #000);
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
@@ -225,10 +224,9 @@ label {
     contain: content;
 }
 form {
-  padding: 10px;
-  width: 360px;
-  height: 90%;
-  
+    padding: 10px;
+    width: 100%;
+    height: 100%;
   }
   form .gender {
     display: -webkit-box;

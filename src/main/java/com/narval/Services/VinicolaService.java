@@ -33,6 +33,7 @@ public class VinicolaService {
 		vin.setDireccion(vinRegistrationForm.getDireccion());
 		vin.setCodigoPost(vinRegistrationForm.getCodigo_post());
 		vinicolaRepository.save(vin);
+		vin.getId();
 
 		return true;
 	}

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Horas",schema="vin-plan")
+@Table(name = "Horarios",schema="vin-plan")
 public class Horas {
 	
 	@Id
@@ -22,7 +22,7 @@ public class Horas {
 	@Column(name="horaApertura",length=50,nullable=false)
 	private int horaApertura;
 
-	@Column(name="horaCierrre",length=50,nullable=false)
+	@Column(name="horaCierre",length=50,nullable=false)
 	private int horaCierre;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -30,7 +30,7 @@ public class Horas {
 	private Servicio servicio;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="Dias_IdDias",referencedColumnName = "id")
+	@JoinColumn(name="Dias_Id",referencedColumnName = "id")
 	private Dias dias;
 	
 	@ManyToOne(cascade = CascadeType.ALL)

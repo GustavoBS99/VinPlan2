@@ -42,6 +42,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
     public WebSecurityConfiguration(SuccesHandler myAuthenticationSuccesHandler ) {
         this.authenticationSuccessHandler = myAuthenticationSuccesHandler;
+        
     }
     
 	
@@ -67,6 +68,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     	.antMatchers("/templates").permitAll()
     	.antMatchers("/SignUp/*").permitAll()
     	.antMatchers("/SignUp").permitAll()
+    	.antMatchers("/AddHorario").permitAll()
 
     	.anyRequest().authenticated()
     	.and()
@@ -76,7 +78,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     		.failureForwardUrl("/Error404")
     	.and()
     	.logout();
-  
+    	http.headers().frameOptions().sameOrigin();
     
        
     }

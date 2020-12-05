@@ -61,13 +61,15 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     	.antMatchers("/Error404").permitAll()
     	.antMatchers("/confirm-account").permitAll()
     	.antMatchers("/AddPuntoTuristico").permitAll()
+    	.antMatchers("/AddServicio").permitAll()
     	.antMatchers("/css/*").permitAll()
     	.antMatchers("/img/*").permitAll()
     	.antMatchers("/static/*").permitAll()
     	.antMatchers("/templates").permitAll()
     	.antMatchers("/SignUp/*").permitAll()
     	.antMatchers("/SignUp").permitAll()
-
+    	
+    	
     	.anyRequest().authenticated()
     	.and()
     	.formLogin().permitAll()

@@ -1,11 +1,16 @@
 package com.narval.controllers;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,6 +46,22 @@ public class SignUpController {
 	
 	@GetMapping("/SignUp")
 	public String SignUp(Model model) {
+	Authentication auth= SecurityContextHolder.getContext().getAuthentication();
+		
+		Collection<? extends GrantedAuthority> authorities=auth.getAuthorities();
+		
+		String redirectUrl=null;
+		for(GrantedAuthority grantedAuthority : authorities) {
+			if(grantedAuthority.getAuthority().equals("Turista")) {
+				redirectUrl="/TouristDashboard";
+			}else if(grantedAuthority.getAuthority().equals("Vinicola")){
+				redirectUrl="/dashboardVinicola";	
+			}
+			
+		}
+		if(auth.getPrincipal() instanceof UserDetails) {
+			return redirectUrl;
+		}
 		List <String> roles= rolesService.getNames();
 		List<String> tiposUsuario=tipoUsuarioService.getTiposUsuario();
 		model.addAttribute("roles",roles);

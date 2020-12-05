@@ -36,7 +36,7 @@ public class SuccesHandler implements AuthenticationSuccessHandler{
 			}
 			
 		}
-			response.sendRedirect("redirect:home");
+			response.sendRedirect(redirectUrl);
 		
 	
 	}

@@ -55,7 +55,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
     	http.authorizeRequests()
     	.antMatchers("/MainMenu").hasAuthority("Turista")
-    	.antMatchers("/VinicolaEdit").hasAuthority("Vinicola")
+    	.antMatchers("/dashboardVinicola").hasAuthority("Vinicola")
     	.antMatchers("/TouristDashboard").hasAuthority("Turista")
     	.antMatchers("/login").permitAll()
     	.antMatchers("/Error404").permitAll()

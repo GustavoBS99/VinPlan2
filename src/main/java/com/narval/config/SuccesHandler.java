@@ -32,11 +32,11 @@ public class SuccesHandler implements AuthenticationSuccessHandler{
 			if(grantedAuthority.getAuthority().equals("Turista")) {
 				redirectUrl="/TouristDashboard";
 			}else if(grantedAuthority.getAuthority().equals("Vinicola")){
-				redirectUrl="/registroVinicola";	
+				redirectUrl="/dashboardVinicola";	
 			}
 			
 		}
-			response.sendRedirect(redirectUrl);
+			response.sendRedirect("redirect:home");
 		
 	
 	}
